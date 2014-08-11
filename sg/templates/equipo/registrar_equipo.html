@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Registro de Equipo {% endblock%}
+
+{% block style_css %}
+{% endblock %}
+
+{% block encabezado %}
+ <h3>Registro de Equipos</h3>
+{% endblock %}
+
+{% block contenido %}
+
+<div style="width:80%;padding:20px;">  
+		<div class="panel panel-default">
+			<div class="panel-heading">Registro de Nueva Sala</div></br>
+				<div class="panel-body">
+				<form method="POST" enctype="multipart/form-data" class='form-inline' role="form">
+				{% csrf_token %}
+				{{form.as_p}}
+				<div class="form-group">
+		    		<div class="col-sm-offset-2 col-sm-10">
+						<button type="submit" class="btn btn-primary">Registrar Equipo</button>
+		    		</div>
+		  		</div>
+				</form>
+				</div>
+			</div>	
+		</div>
+{% endblock%}

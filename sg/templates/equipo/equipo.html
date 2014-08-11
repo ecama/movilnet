@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Equipo {% endblock%}
+
+{% block style_css %}
+{% endblock %}
+
+
+
+{% block contenido %}
+
+<ul>
+<table frame="hsides" border="10" cellpadding="5" cellspacing="0" width="100%">
+<caption><h4>{{equipo.host_name}}</h4></caption>
+<tr>
+<th scope="col">Hostname</th>
+<th scope="col">Serial</th>
+<th scope="col">Modelo</th>
+<th scope="col">Funcion</th>
+<th scope="col">Fuentes</th>
+<th scope="col">Fuentes Conect.</th>
+<th scope="col">Sede</th>
+<th scope="col">Sala</th>
+<th scope="col">Fila</th>
+<th scope="col">Rack</th>
+<th scope="col">Status</th>
+<th scope="col">Gerencia Responsable</th>
+<th scope="col">Plataforma</th>
+</tr>
+<tr>
+<td>{{equipo.host_name}}</td>
+<td>{{equipo.serial}}</td>
+<td>{{equipo.modelo}}</td>
+<td>{{equipo.funcion}}</td>
+<td>{{equipo.fuentes}}</td>
+<td>{{equipo.fuentes_conectadas}}</td>
+<td>{{equipo.sede}}</td>
+<td>{{equipo.sala}}</td>
+<td>{{equipo.fila}}</td>
+<td>{{equipo.rack}}</td>
+<td>{{equipo.status}}</td>
+<td>{{equipo.gerencia_responsable}}</td>
+<td>{{equipo.plataforma}}</td>
+</tr>
+</table>
+</ul>
+
+{% endblock %}

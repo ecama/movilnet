@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Lista de Sedes Registradas {% endblock%}
+
+{% block style_css %}
+{% endblock %}
+
+{% block encabezado %}
+    <h3>Lista de Sedes Registradas</h3>
+{% endblock %}
+
+{% block contenido %}
+
+	<ul>
+		{% for apuntador in lista_de_sedes %}
+			<a href='/ubicacion/reportar/sedes/{{apuntador.id}}'> {{apuntador.sede}}</a></br>
+		{% endfor %}
+	</ul>
+
+
+<ul class="pagination">
+  <li><a href="#">&laquo;</a></li>
+  <li><a href="#">1</a></li>
+  <li><a href="#">2</a></li>
+  <li><a href="#">3</a></li>
+  <li><a href="#">4</a></li>
+  <li><a href="#">5</a></li>
+  <li><a href="#">&raquo;</a></li>
+</ul>
+
+
+{% endblock %}

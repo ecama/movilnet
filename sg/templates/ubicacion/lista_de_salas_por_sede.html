@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Salas {% endblock %}
+
+{% block style_css %}
+{% endblock %}
+
+{% block encabezado %}
+    <h3>Salas Registradas</h3>
+{% endblock %}
+
+{% block contenido %}
+
+<section>
+	<div id='sede'>
+		<h4>Sede</h4>
+		{{sede.sede}}
+	</div>
+
+	<div id='sala'>
+		<h4>Salas</h4>
+		{% for apuntador in salas %}
+			<a href='/ubicacion/reportar/salas/{{apuntador.id}}'> {{apuntador.sala}}</a></br>
+		{% empty %}
+			<p>Sin Salas Registradas</p>
+		{% endfor %}
+	</div>
+
+	<div id='equipo'>
+<ul>
+	<table class="table table-hover">
+	<caption><h4>Equipos en la sede {{sede.sede}}</h4></caption>
+		<theader>
+			<tr>
+				<th scope="col">Host</th>
+				<th scope="col">Sala</th>
+				<th scope="col">Fila</th>
+				<th scope="col">Rack</th>
+			</tr>
+		</theader>
+	{% for indice in equipos_en_sede %}
+		<tbody>
+			<tr>
+				<td><a href='/equipo/equipos/{{indice.id}}'>{{indice.host_name}}</a></td>
+				<td>{{indice.sala}}</td>
+				<td>{{indice.fila}}</td>
+				<td>{{indice.rack}}</td>
+			</tr>
+		</tbody>
+		{% empty %}
+			<p>Sin equipos registrados en esta sede</p>
+	{% endfor %}
+	</table>
+</ul>
+	</div>
+</section>
+{% endblock %}
+

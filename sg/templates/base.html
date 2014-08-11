@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+ <html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{% block titulo %}{% endblock %}</title>
+        <meta name="viewport" content="width=device-width">      
+        <link rel="stylesheet" href="/media/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/media/bootstrap/css/bootstrap-theme.min.css">           
+        <link rel="stylesheet" href="/media/bootstrap/css/bootstrap-responsive.min.css">
+        <script src="/media/js/jquery.js"></script>
+        <script src="/media/bootstrap/js/bootstrap.js"></script>   
+        <script src="/media/bootstrap/js/bootstrap.min.js"></script>           
+     
+        <!--link rel="stylesheet" href="{{STATIC_URL}}css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{STATIC_URL}}css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="{{STATIC_URL}}css/my_stilos.css">
+        <link rel="stylesheet" href="{{STATIC_URL}}css/main.css">
+        <link rel="stylesheet" href="{{STATIC_URL}}css/inicio.css">
+        <link rel="stylesheet" href="{{STATIC_URL}}css/estilos_buscar.css"-->
+        <link href='http://fonts.googleapis.com/css?family=Advent+Pro:400,500' rel='stylesheet'>
+        <script src="{{STATIC_URL}}js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script type="text/javascript">
+    $(document).ready(function(){
+        var cambio = false;
+        $('.nav li a').each(function(index) {
+            if(this.href.trim() == window.location){
+                $(this).parent().addClass("active");
+                cambio = true;
+            }
+        });
+        if(!cambio){
+            $('.nav li:first').addClass("active");
+        }
+    });
+</script>
+    </head>
+   
+    <body>
+<!--div class="row-fluid">
+<div class="span12">
+ <div class="navbar navbar-inverse">
+      <div class="navbar-inner"-->
+
+<ul class="nav nav-tabs" role="tablist">
+            <li><a href="/principal/inicio">Inicio</a></li>
+            <li><a href="/equipo/equipos/">Equipos</a></li>
+            <li><a href="/ubicacion/reportar/sedes">Sedes</a></li>  
+            <li><a href="/ubicacion/listado/salas">Listado de Salas</a></li>                   
+            <li><a href="/interfaz/registrar/inter">Buscar</a></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Registrar
+                 <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="/ubicacion/registrar/sede">Registrar Sede</a></li>
+                <li><a href="/ubicacion/registrar/sala">Registrar Sala</a></li>
+                <li><a href="/equipo/registrar/equipo">Registrar Equipo</a></li>                
+              </ul>
+          </li>
+                <div class="busqueda">
+            <form class="navbar-search pull-right" method="POST" action="/equipo/buscar/">{% csrf_token %}
+
+                <input type="text" name="buscalo" class="search-query" placeholder="Buscar">
+                <div class="btn-group">
+                    <button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                </div>
+            </form>
+          </div>
+          </div>
+</div>
+</ul>
+
+
+      <!--div class="row-fluid">
+      <div class="navbar navbar-fixod-top">
+        <div class = "navbar-inner">
+        <div class="span12">
+        <li><a class="brand" href="/principal/inicio">Daserk</a>
+          <ul class="nav">
+            <li><a href="/principal/inicio">Inicio</a></li>
+            <li><a href="/equipo/equipos/">Equipos</a></li>
+            <li><a href="/ubicacion/reportar/sedes">Sedes</a></li>  
+            <li><a href="/ubicacion/listado/salas">Listado de Salas</a></li>                   
+            <li><a href="/principal/inicio">Buscar</a></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Registrar
+                 <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="/ubicacion/registrar/sede">Registrar Sede</a></li>
+                <li><a href="/ubicacion/registrar/sala">Registrar Sala</a></li>
+                <li><a href="/equipo/registrar/equipo">Registrar Equipo</a></li>                
+              </ul>
+          </li>
+          </ul>
+	    <div class="busqueda">
+            <form class="navbar-search pull-right" method="POST" action="/equipo/buscar/">{% csrf_token %}
+
+                <input type="text" name="buscalo" class="search-query" placeholder="Buscar">
+                <div class="btn-group">
+                    <button class="btn btn-primary" type="submit"><i class="icon-search"></i></button>
+                </div>
+            </form>
+          <ul class="nav">
+	    <li><a class="brand" href="/principal/cerrar/">&nbsp Salir</a></li>
+	  </ul>
+          </div>
+          </div>
+</div>
+      </div>
+</div>
+</div>
+</div-->
+  {% block encabezado %}
+  {% endblock%}
+
+  {% block contenido %}
+  {% endblock %}
+
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="{{STATIC_URL}}js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+
+    <script src="{{STATIC_URL}}js/vendor/bootstrap.min.js"></script>
+
+    <script src="{{STATIC_URL}}js/main.js"></script>
+    {% block js %}
+    {% endblock %}
+
+</body>
+</html>

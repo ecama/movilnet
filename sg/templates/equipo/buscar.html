@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Resultado de busqueda {% endblock%}
+
+{% block style_css %}
+{% endblock %}
+
+{% block encabezado %}
+ Equipos Encontrados
+{% endblock %}
+
+{% block contenido %}
+		{% if serial %}
+			<ul>
+			{% for serial in especific %}
+			<li>
+			<a href='/equipo/equipos/{{serial.id}}'>{{serial.host_name}}</a></br>
+			{% endfor%}
+		{% endif%}	
+
+{% endblock %}

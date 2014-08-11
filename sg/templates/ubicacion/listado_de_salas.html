@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block titulo %} listado de Salas{% endblock%}
+
+{% block style_css %}
+{% endblock %}
+
+{% block contenido %}
+
+{% for apuntador in salas %}
+	<li>
+		{{apuntador.sala}}
+		{{apuntador.sede}}
+
+	</li></br>
+	{% endfor %}
+
+	  {% with total=filas.count %}
+	  {{total}} fila{{total|pluralize}}
+      {% endwith %}
+
+      {% with total=rack.count %}
+	  {{total}} rack{{total|pluralize}}
+      {% endwith %}     
+
+      {% with total=equipos.count %}
+	  {{total}} equipo{{total|pluralize}}
+      {% endwith %}   
+
+
+{% endblock %}
